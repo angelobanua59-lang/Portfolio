@@ -1,0 +1,432 @@
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background-color: #14213d;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+
+    animation: fadeDown 0.8s ease;
+}
+
+header h1 {
+    margin-bottom: 5px;
+}
+
+header p {
+    margin-top: 5px;
+}
+
+
+/* =========================
+   PROFILE IMAGE
+========================= */
+
+img {
+    height: 250px;
+    width: 250px;
+
+    display: block;
+    margin: 0 auto 15px;
+
+    border: 3px solid white;
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    animation: zoomIn 0.8s ease;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.button {
+    display: inline-block;
+
+    background-color: #fca311;
+    color: #14213d;
+
+    padding: 10px 20px;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    border-radius: 5px;
+
+    transition: transform 0.3s ease,
+                background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #ffc247;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    background-color: #263858;
+
+    text-align: center;
+    padding: 12px;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+
+    margin: 5px;
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    border-radius: 4px;
+
+    transition: transform 0.3s ease,
+                background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #14213d;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    max-width: 900px;
+
+    margin: 25px auto;
+
+    padding: 0 10px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+main section {
+    display: block;
+
+    background-color: white;
+
+    margin: 20px;
+    padding: 25px;
+
+    border-radius: 8px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+    animation: fadeUp 0.7s ease;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+
+/* Hide other sections when selected */
+
+main:has(section:target) section:not(:target) {
+    display: none;
+}
+
+
+/* Keep selected section visible */
+
+main section:target {
+    display: block;
+}
+
+
+/* Section hover */
+
+main section:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+h2 {
+    color: #14213d;
+
+    border-bottom: 2px solid #fca311;
+
+    padding-bottom: 8px;
+
+    margin-top: 0;
+}
+
+h3 {
+    color: #263858;
+}
+
+
+/* =========================
+   EDUCATION CARD
+========================= */
+
+.card {
+    background-color: #f8f9fb;
+
+    padding: 18px;
+
+    border-radius: 6px;
+
+    border-left: 4px solid #fca311;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-container {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.skill {
+    background-color: #263858;
+
+    color: white;
+
+    padding: 8px 15px;
+
+    border-radius: 20px;
+
+    transition: transform 0.3s ease,
+                background-color 0.3s ease;
+}
+
+.skill:hover {
+    background-color: #14213d;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-info p {
+    margin: 10px 0;
+}
+
+.contact-info a {
+    color: #14213d;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    color: #fca311;
+
+    text-decoration: underline;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background-color: #14213d;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 15px;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes zoomIn {
+
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 30px 15px;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    nav {
+        padding: 8px 5px;
+    }
+
+    nav a {
+        margin: 3px;
+        padding: 5px 7px;
+
+        font-size: 13px;
+    }
+
+    main {
+        padding: 0;
+        margin: 15px auto;
+    }
+
+    main section {
+        margin: 12px;
+        padding: 18px;
+    }
+
+    img {
+        height: 120px;
+        width: 120px;
+    }
+
+    .skills-container {
+        gap: 8px;
+    }
+
+    .skill {
+        font-size: 14px;
+        padding: 7px 12px;
+    }
+
+}
+
+
+/* =========================
+   REDUCE MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+
+}
+
+.hire-btn {
+    display: inline-block;
+    background-color: #263858;
+    color: white;
+    text-decoration: none;
+    padding: 10px 25px;
+    margin-top: 15px;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hire-btn:hover {
+    background-color: white;
+    color: #14213d;
+    border-color: white;
+}
